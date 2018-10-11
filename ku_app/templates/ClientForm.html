@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Client</title>
+</head>
+<body>
+	<h1>Форма клиента</h1>
+	<form method="post" enctype="multipart/form-data" action="/client/">
+		{% csrf_token %}
+		{{ form }}
+		
+	</form>
+</body>
+</html>

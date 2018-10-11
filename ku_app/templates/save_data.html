@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class = 'col-sm-8 col-sm-offset-2'>
+	<h3 class="text-center">Данные успешно сохранены! </h3>
+	<p class="text-center"><a href="{% url 'client-list' %}"><button class="btn btn-default">Вернуться к списку клиентов</button></a></p>
+</div>
+
+{% endblock content %}

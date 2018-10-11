@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 class="text-center">Форма клиента</h1>
+	<form action = "{% url 'make_doc1' %}" method="POST">
+	{% csrf_token %}
+
+	<div class="row">
+		<div class="col-sm-3">
+			<p class="text-center">Документы на печать</p>
+				 <div class="list-group">
+					<ul>
+	    				<li><input type="submit" name="doc1" value="Доверенность"></li>
+						<li><input type="submit" name="doc2" value="Договор консультационных услуг"></li>
+						<li><input type="submit" name="newsletter_sub" value="Договор оказания услуг-аварком"></li>
+						<li><input type="submit" name="newsletter_sub" value="Договор поручения"></li>
+						<li><input type="submit" name="newsletter_sub" value="договор юр.обслуживания"></li>
+						<li><input type="submit" name="newsletter_sub" value="Доп.согл. к договору юр.обсл. (1)"></li>
+						<li><input type="submit" name="newsletter_sub" value="Заявление о ПВУ"></li>
+						<li><input type="submit" name="newsletter_sub" value="Информация для клиента"></li>
+						<li><input type="submit" name="newsletter_sub" value="Карточка клиента"></li>
+						<li><input type="submit" name="newsletter_sub" value="Опись"></li>
+						<li><input type="submit" name="newsletter_sub" value="Согласие на обработку данных"></li>
+						<li><input type="submit" name="newsletter_sub" value="оглашение о переуступке"></li>
+						<li><input type="submit" name="newsletter_sub" value="соглашение с переводом долга"></li>
+						<li><input type="submit" name="newsletter_sub" value="Уведомление об осмотре"></li>
+						<li><input type="submit" name="newsletter_sub" value="Уведомление от потерпевшего"></li>
+					</ul>
+				</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-8">
+				<h3 class="text-center">Основные данные</h3>
+				<br>
+				<div class="col-sm-4">
+					{{ form.FIO_Client|as_crispy_field }}
+				</div>
+				<div class="col-sm-4">
+					{{ form.INN_Client|as_crispy_field }}
+				</div>
+				<div class="col-sm-4">
+					{{ form.Phone_Client|as_crispy_field }}
+				</div>
+				<br>
+
+				<input type="submit" class = 'btn btn-success' value="Сохранить данные" name = 'save_data'>
+				<br>
+			</div>
+		</div>
+	</div>
+</form>
+<br>
+{% endblock content %}
